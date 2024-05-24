@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def simulate_coin_flip_tournament(num_participants=1000):
     # Initialize variables
     num_rounds = 0
@@ -31,6 +32,7 @@ def simulate_coin_flip_tournament(num_participants=1000):
     print(f"\nFinal Winner: {current_round_size} participants remaining.")
     print(f"Total Rounds: {num_rounds}")
     print(f"Number of Heads Flipped by Final Winner: {np.sum(previous_round_flips == 'heads').item()}")
+
 
 # Run the simulation
 simulate_coin_flip_tournament()
