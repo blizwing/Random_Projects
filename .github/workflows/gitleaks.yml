@@ -1,0 +1,17 @@
+name: Scan for Secrets
+on:
+  push:
+    branches:
+      - master # Change this to the branch you want to protect
+
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Gitleaks
+        uses: zricethezav/github-action-gitleaks@master
+        with:
+          args: "--exclude-path=.git/.*/"
